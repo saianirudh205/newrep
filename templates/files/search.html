@@ -1,0 +1,27 @@
+{% extends 'files/home.html' %}
+{% load static %}
+
+{% block main %}
+<link rel="stylesheet" type="text/css" href={% static 'profile.css' %}>
+
+{% for user in users %}
+ <div class="msg left-msg" >
+      <div
+       class="msg-img"
+       style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)"
+      ><img src="" /></div>
+
+      <div class="msg-bubble">
+        <div class="msg-info">
+          <div class="msg-info-name"><span>{{user.username}}</span></div>
+          <div class="msg-info-time">12:45</div>
+        </div>
+
+        <div class="msg-text">
+          {{user.first_name}} 😄
+        </div>
+      </div>
+    </div>
+
+{% endfor %}
+{% endblock main %}

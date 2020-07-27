@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css"></style>
+	<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+	    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body oncontextmenu="return false">
+
+{% if user.is_authenticated %}
+
+
+<section class="msger">
+  <header class="msger-header">
+    <div class="msger-header-title">
+      <p> A&A Software Industry</p>
+    </div>
+    <div class="msger-header-options">
+      <span><p onclick='logout()'>Log Out</p></span>
+    </div>
+  </header>
+
+  <main class="msger-chat">
+  {% block main %}
+  {% endblock main %}
+  
+     </main>
+ <div class="bottombar" id="horizontal-style"  style="font-size: 50px;" >
+
+  <ul id="horizontal-style" style="text-decoration:none"> 
+    <li ><a class="fas fa-home"  style="size: 7x; " onclick="takehome()" style="text-decoration: none;"></a></li>    
+    <li><a class="fas fa-search"  style="size: 7x; " onclick="takesearch()"></a></li>
+    <li><a class="fas fa-comment-alt"  style="size: 7x; " onclick="takechat()"></a></li>
+
+        <li><a class="fas fa-user"  style="size: 7x; " onclick="takeprofile()"></a></li>  
+  </div>
+	<link rel="stylesheet" type="text/css" href="{% static 'lower.css' %}">
+
+
+
+
+<script>
+function takehome(){
+  window.location.href='corehome';
+}
+function takesearch(){
+  window.location.href='search';
+}
+function takechat(){
+  window.location.href='chatbox';
+}
+function takeprofile(){
+  window.location.href='profile';
+}
+function logout(){
+  window.location.href='logout';
+}
+</script>
+</section>
+
+{% else %}
+<script>
+alert("you haven't logged in");
+window.location.href='loginurl';
+
+
+</script>
+
+{% endif %}
+
+
+</body>
+</html>

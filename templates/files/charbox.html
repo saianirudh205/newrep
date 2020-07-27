@@ -1,0 +1,62 @@
+{% extends 'files/chat.html' %}
+{% load static %}
+
+{% block chatblock %}
+
+{% for data in datas  %}
+
+{% if data.username == user.username %}
+  <div class="msg right-msg">
+      <div
+       class="msg-img"
+       style="background-image: url({% static 'doremon.jpg' %})"
+      ></div>
+
+      <div class="msg-bubble">
+        <div class="msg-info">
+          <div class="msg-info-name"><a style="text-decoration:underline;color:blue">{{data.username}}</a></div>
+          <div class="msg-info-time">{{data.date}}</div>
+        </div>
+
+        <div class="msg-text">
+        {{data.texted}}
+        </div>
+      </div>
+    </div>
+
+
+{% else %}
+
+ <div class="msg left-msg" >
+      <div
+       class="msg-img"
+       style="background-image: url({% static 'doremon.jpg' %})"
+      ></div>
+
+      <div class="msg-bubble">
+        <div class="msg-info">
+          <div class="msg-info-name"><a style="text-decoration:underline;color:blue">{{data.username}}</a></div>
+          <div class="msg-info-time">{{data.date}}</div>
+        </div>
+
+        <div class="msg-text">
+          {{data.texted}}
+        </div>
+      </div>
+    </div>
+
+{% endif %}
+
+
+
+
+
+
+{% endfor %}
+
+
+
+
+
+
+{% endblock chatblock %}

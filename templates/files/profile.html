@@ -1,0 +1,62 @@
+{% extends 'files/home.html' %}
+ {% load static %}
+
+ {% block main %}
+<link rel="stylesheet" type="text/css" href={% static 'profile.css' %}>
+<style>
+
+</style>
+<!--for-->
+{% if user.is_authenticated %}
+<div id="thisis">
+  <div class="msg left-msg">
+      <div class="msg-bubble">
+       <div id = "newprofile"> 
+    <div id="left"> 
+      <img src='{% static 'mylogo.jpg' %}' height=300px />
+    </div> 
+    
+    <div id="right" style='text-decoration:none;text-transform:capitalize;color:blue;background-color:black'> 
+      <br>
+      <center>
+      <p>{{user.username}}</p><br><br>
+      <p>{{user.last_name}}     {{user.first_name}}</p><br><br>
+      <p>Make sure to take the test </p><br><br>
+      <p>Your score will be shown here </p>
+    </center>   
+    </div> 
+  </div>         </div>
+
+      </div>
+    </div>
+    <br>
+
+
+<div id="thisis">
+  <div class="msg left-msg">
+      <div class="msg-bubble">
+       <div id = "newprofile"> 
+    <div id="left"> 
+      <img src='{% static 'mylogo.jpg' %}' height=300px />
+    </div> 
+    
+    <div id="right" style='text-decoration:none;text-transform:capitalize;color:blue;background-color:black'> 
+      <br>
+      <center>
+      <p>Getting better everyday is a habit of happy and successful people </p><br><br>
+      <a href='https://www.hackerrank.com/dashboard'><p>click here to practice</p> </a>
+      <p></p>
+    </center>   
+    </div> 
+  </div>         </div>
+
+      </div>
+    </div>
+    <br>
+
+    
+    <!--end for-->
+
+{% endif %}
+
+ {% endblock main %}
