@@ -1,0 +1,39 @@
+{% extends 'home.html' %}
+ {% load static %}
+
+ {% block main %}
+<link rel="stylesheet" type="text/css" href={% static 'profile.css' %}>
+<style>
+#file{
+  background: url('mylogo.jpg') center center no-repeat #e4e4e4;
+}
+</style>
+<!--for-->
+<div id="thisis">
+  <div class="msg left-msg">
+      <div class="msg-bubble">
+       <div id = "newprofile"> 
+    <div id="left"> 
+      <form>
+        <img id="file" />
+          <input type="file" name="files" id='files' />
+      </form>
+    </div> 
+    
+    <div id="right"> 
+      <br>
+      <center>
+      <ins>SaI Anirudh</ins><br><br>
+      <ins>score:9/10</ins>
+    </center>   
+    </div> 
+  </div>         </div>
+
+      </div>
+    </div>
+    <br>
+    <!--end for-->
+
+
+
+ {% endblock main %}

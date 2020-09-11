@@ -1,0 +1,41 @@
+{% extends 'home.html' %}
+{{% load static %}}
+
+{% block main %}
+<link rel="stylesheet" type="text/css" href={% static 'profile.css' %}>
+
+
+    {% for post in posts  %}
+    
+    <div id="thisis">
+  <div class="msg left-msg">
+      <div class="msg-bubble">
+       <div id = "newprofile"> 
+    <div id="left"> 
+
+        <img id="file" />
+    
+    </div> 
+    
+    <div id="right"> 
+      <br>
+      <center>
+     <br><br>
+      <a href="{{post.name}}">click</a>
+    </center>   
+    </div> 
+  </div>         </div>
+
+      </div>
+    </div>
+    <br>
+    
+    
+    {% endfor %}
+
+
+
+{% endblock main %}
+
+
+
